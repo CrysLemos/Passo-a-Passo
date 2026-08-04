@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Como organizar a rotina matinal de uma criança autista — Passo a Passo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sage:#EAF0E4; --sage-deep:#DCE6D5; --ivory:#FBF9F4;
+    --plum:#453B5C; --plum-deep:#332B47;
+    --ochre:#D9A441; --ochre-deep:#BE8A2B;
+    --rose:#D98C86; --teal:#4C7A73;
+    --ink:#2B2A33; --ink-soft:#5B5967; --line:#C9D4C0;
+    --radius:18px; --shadow:0 6px 24px rgba(43,42,51,0.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  body{margin:0; background:var(--sage); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif; color:var(--plum); margin:0; line-height:1.18; font-weight:600; letter-spacing:-0.01em;}
+  em.warm{font-style:italic; color:var(--ochre-deep);}
+  p{margin:0;}
+  a{color:inherit; text-decoration:none;}
+  img,svg{display:block; max-width:100%;}
+  button{font-family:inherit; cursor:pointer;}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+  :focus-visible{ outline:3px solid var(--ochre-deep); outline-offset:3px; border-radius:6px; }
+
+  /* HEADER (mesmo padrão da home) */
+  header{position:sticky; top:0; z-index:50; background:rgba(234,240,228,0.88); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:18px 28px; max-width:1180px; margin:0 auto;}
+  .logo{display:flex; align-items:center; gap:10px; font-family:'Fraunces',serif; font-weight:700; font-size:1.3rem; color:var(--plum);}
+  .logo .dot{width:10px; height:10px; border-radius:50%; background:var(--ochre);}
+  .logo .dot2{width:10px; height:10px; border-radius:50%; background:var(--rose); margin-left:-4px;}
+  .navlinks{display:flex; align-items:center; gap:30px;}
+  .navlinks a{font-size:0.95rem; font-weight:500; color:var(--ink-soft); transition:color .2s;}
+  .navlinks a:hover{color:var(--plum);}
+  .navcta{background:var(--plum); color:var(--ivory); padding:10px 20px; border-radius:999px; font-size:0.88rem; font-weight:600; white-space:nowrap; transition:background .2s, transform .2s; border:none;}
+  .navcta:hover{background:var(--plum-deep); transform:translateY(-1px);}
+  .menu-btn{display:none; background:none; border:none; padding:6px;}
+  .menu-btn span{display:block; width:24px; height:2px; background:var(--plum); margin:5px 0; border-radius:2px;}
+  @media (max-width:880px){
+    .navlinks{position:absolute; top:100%; left:0; right:0; background:var(--ivory); flex-direction:column; align-items:flex-start; padding:20px 28px 26px; gap:16px; border-bottom:1px solid var(--line); display:none;}
+    .navlinks.open{display:flex;}
+    .navlinks .navcta{width:100%; text-align:center;}
+    .menu-btn{display:block;}
+  }
+
+  /* BREADCRUMB */
+  .crumb{padding:26px 0 0; font-size:0.85rem; color:var(--ink-soft);}
+  .crumb a{color:var(--teal); font-weight:600;}
+  .crumb .sep{margin:0 8px; opacity:0.5;}
+
+  /* ARTICLE HERO */
+  .art-hero{padding:34px 0 46px;}
+  .tag{display:inline-block; font-size:0.72rem; font-weight:700; letter-spacing:0.05em; text-transform:uppercase; padding:6px 14px; border-radius:999px; background:var(--ivory); color:var(--teal); box-shadow:var(--shadow);}
+  .art-hero h1{margin-top:20px; font-size:clamp(2rem, 4.4vw, 2.9rem); max-width:22ch;}
+  .art-meta{display:flex; align-items:center; gap:16px; margin-top:22px; font-size:0.88rem; color:var(--ink-soft); flex-wrap:wrap;}
+  .avatar{width:34px; height:34px; border-radius:50%; background:var(--plum); color:var(--ivory); display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-weight:700; font-size:0.85rem;}
+  .art-meta .who{display:flex; align-items:center; gap:10px; font-weight:600; color:var(--ink);}
+  .dot-sep{width:4px; height:4px; border-radius:50%; background:var(--ink-soft); opacity:0.5;}
+
+  /* LAYOUT */
+  .art-layout{display:grid; grid-template-columns:1fr 300px; gap:56px; align-items:start; padding-bottom:80px;}
+  @media (max-width:920px){ .art-layout{grid-template-columns:1fr;} }
+
+  .art-body{background:var(--ivory); border-radius:28px; padding:48px; box-shadow:var(--shadow);}
+  @media (max-width:600px){ .art-body{padding:30px 22px; border-radius:20px;} }
+  .art-body p.intro{font-size:1.12rem; color:var(--ink-soft); margin-bottom:6px;}
+  .art-body .divider{height:1px; background:var(--line); margin:34px 0;}
+
+  .art-body h2{font-size:1.5rem; margin-top:40px; margin-bottom:16px;}
+  .art-body h2:first-of-type{margin-top:8px;}
+  .art-body h3{font-size:1.15rem; color:var(--teal); margin-top:26px; margin-bottom:10px; font-weight:700;}
+  .art-body p{margin-top:14px; font-size:1rem; color:var(--ink);}
+  .art-body ul, .art-body ol{margin-top:14px; padding-left:22px; display:flex; flex-direction:column; gap:10px;}
+  .art-body li{font-size:1rem;}
+  .art-body strong{color:var(--plum);}
+
+  .step-num{display:flex; gap:16px; align-items:flex-start; margin-top:22px;}
+  .step-num .n{flex:0 0 34px; height:34px; border-radius:50%; background:var(--sage); color:var(--plum); font-family:'Fraunces',serif; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:0.95rem;}
+  .step-num .content h3{margin-top:0;}
+  .step-num .content p{margin-top:6px;}
+
+  .callout{
+    margin-top:32px; background:var(--plum); color:var(--ivory); border-radius:18px; padding:28px 30px;
+    display:flex; gap:20px; align-items:center; flex-wrap:wrap;
+  }
+  .callout .icon-wrap{flex:0 0 auto; width:50px; height:50px; border-radius:50%; background:rgba(255,255,255,0.12); display:flex; align-items:center; justify-content:center;}
+  .callout .icon-wrap svg{width:24px; height:24px; color:var(--ochre);}
+  .callout .txt{flex:1 1 220px;}
+  .callout .txt strong{color:var(--ivory); font-family:'Fraunces',serif; font-size:1.05rem; display:block; margin-bottom:4px;}
+  .callout .txt span{font-size:0.9rem; color:#D8D3E4;}
+  .callout .btn{background:var(--ochre); color:var(--plum-deep); padding:11px 20px; border-radius:999px; font-weight:700; font-size:0.88rem; white-space:nowrap; transition:background .2s;}
+  .callout .btn:hover{background:var(--ochre-deep); color:var(--ivory);}
+
+  blockquote{
+    margin:28px 0; padding:20px 24px; background:var(--sage); border-left:4px solid var(--rose); border-radius:8px;
+    font-style:italic; color:var(--ink); font-size:1rem;
+  }
+
+  .quick-tips{background:var(--sage); border-radius:16px; padding:24px 26px; margin-top:28px;}
+  .quick-tips p.head{font-weight:700; color:var(--plum); font-size:0.95rem; margin-bottom:12px;}
+  .quick-tips ul{margin-top:0;}
+  .quick-tips li{font-size:0.95rem;}
+
+  .author-box{
+    margin-top:44px; padding-top:32px; border-top:1px solid var(--line);
+    display:flex; gap:16px; align-items:flex-start;
+  }
+  .author-box .avatar{width:52px; height:52px; font-size:1.1rem; flex-shrink:0;}
+  .author-box h4{font-family:'Fraunces',serif; color:var(--plum); font-size:1.05rem; margin-bottom:4px;}
+  .author-box p{margin-top:0; font-size:0.9rem; color:var(--ink-soft);}
+
+  .disclaimer-box{
+    margin-top:28px; padding:18px 22px; border:1px dashed var(--line); border-radius:12px;
+    font-size:0.85rem; color:var(--ink-soft);
+  }
+
+  /* SIDEBAR */
+  .sidebar{display:flex; flex-direction:column; gap:24px; position:sticky; top:100px;}
+  .side-card{background:var(--ivory); border-radius:18px; padding:24px; box-shadow:var(--shadow);}
+  .side-card h4{font-family:'Fraunces',serif; color:var(--plum); font-size:1.05rem; margin-bottom:16px;}
+  .toc{display:flex; flex-direction:column; gap:10px;}
+  .toc a{font-size:0.88rem; color:var(--ink-soft); font-weight:500; transition:color .2s;}
+  .toc a:hover{color:var(--teal);}
+  .side-pdf{background:var(--plum); color:var(--ivory); border-radius:18px; padding:26px; text-align:center;}
+  .side-pdf h4{color:var(--ivory); font-size:1rem; margin-bottom:8px;}
+  .side-pdf p{font-size:0.85rem; color:#D8D3E4; margin-top:0;}
+  .side-pdf .btn{display:inline-block; margin-top:16px; background:var(--ochre); color:var(--plum-deep); padding:11px 22px; border-radius:999px; font-weight:700; font-size:0.86rem;}
+  .side-related a{display:block; font-size:0.9rem; font-weight:600; color:var(--ink); padding:10px 0; border-bottom:1px dashed var(--line);}
+  .side-related a:last-child{border-bottom:none;}
+  .side-related a:hover{color:var(--teal);}
+
+  /* RELATED (grid abaixo) */
+  .related-section{background:var(--ivory); border-radius:32px; margin:0 20px 96px;}
+  @media (max-width:720px){ .related-section{margin:0 10px 64px; border-radius:22px;} }
+  .related-inner{padding:64px 28px;}
+  .section-head{max-width:640px; margin-bottom:40px;}
+  .section-head h2{font-size:clamp(1.5rem, 2.6vw, 2rem);}
+  .section-head p{margin-top:12px; color:var(--ink-soft);}
+  .art-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media (max-width:900px){ .art-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .art-grid{grid-template-columns:1fr;} }
+  .art-card{background:var(--sage); border-radius:16px; padding:22px; display:flex; flex-direction:column; gap:12px; transition:transform .2s, background .2s;}
+  .art-card:hover{transform:translateY(-4px); background:var(--sage-deep);}
+  .art-card .tag{background:var(--ivory);}
+  .art-card h3{font-size:1.02rem; font-weight:600; color:var(--plum);}
+  .art-meta2{font-size:0.78rem; color:var(--ink-soft); margin-top:auto;}
+
+  footer{background:var(--plum-deep); color:#C9C3DA; padding:56px 0 34px;}
+  .foot-grid{display:grid; grid-template-columns:1.4fr repeat(3,1fr); gap:36px;}
+  @media (max-width:780px){ .foot-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:480px){ .foot-grid{grid-template-columns:1fr;} }
+  .foot-grid h4{color:var(--ivory); font-family:'Inter',sans-serif; font-size:0.86rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:14px;}
+  .foot-grid a{display:block; font-size:0.9rem; margin-bottom:10px; color:#B9B2CC; transition:color .2s;}
+  .foot-grid a:hover{color:var(--ivory);}
+  .foot-logo{font-family:'Fraunces',serif; font-size:1.4rem; color:var(--ivory); font-weight:700;}
+  .foot-tag{font-size:0.88rem; margin-top:12px; max-width:32ch; color:#B9B2CC;}
+  .foot-disclaimer{margin-top:44px; padding-top:28px; border-top:1px solid rgba(255,255,255,0.12); font-size:0.8rem; color:#9E96B4; line-height:1.6;}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="passo-a-passo.html" class="logo"><span class="dot"></span><span class="dot2"></span>&nbsp;Passo a Passo</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="navlinks" id="navLinks">
+      <a href="passo-a-passo.html#categorias">Dia a Dia</a>
+      <a href="passo-a-passo.html#categorias">Educação</a>
+      <a href="passo-a-passo.html#categorias">Autocuidado</a>
+      <a href="passo-a-passo.html#relatos">Relatos</a>
+      <a href="passo-a-passo.html#download" class="navcta">Baixe o quadro grátis</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="wrap">
+    <p class="crumb"><a href="passo-a-passo.html">Início</a><span class="sep">/</span><a href="passo-a-passo.html#categorias">Dia a Dia e Rotina</a><span class="sep">/</span>Rotina matinal</p>
+
+    <section class="art-hero">
+      <span class="tag">Dia a Dia e Rotina</span>
+      <h1>Como organizar a rotina matinal de uma criança autista</h1>
+      <div class="art-meta">
+        <div class="who"><span class="avatar">PP</span> Equipe Passo a Passo</div>
+        <span class="dot-sep"></span><span>7 min de leitura</span>
+        <span class="dot-sep"></span><span>Atualizado em julho de 2026</span>
+        <span class="dot-sep"></span><span>Revisão: apoio pedagógico especializado</span>
+      </div>
+    </section>
+
+    <div class="art-layout">
+      <article class="art-body">
+        <p class="intro">A manhã costuma ser o momento mais tenso do dia para muitas famílias atípicas: pouco tempo, muitas etapas e, para a criança, uma sequência de transições difíceis de prever. A boa notícia é que pequenos ajustes na forma como a rotina é apresentada — não no que precisa ser feito, mas em como é comunicado — já reduzem bastante a sobrecarga.</p>
+
+        <h2 id="por-que">Por que a rotina matinal pesa tanto</h2>
+        <p>Para muitas crianças autistas, o desafio não é a atividade em si, mas a <strong>transição</strong> entre uma etapa e outra, somada à imprevisibilidade de "o que vem depois". Sem um apoio claro, cada passo da manhã exige uma negociação — e isso consome energia de todo mundo antes mesmo de sair de casa.</p>
+        <p>Entender isso muda o foco: em vez de tentar "acelerar" a criança, a estratégia mais eficaz costuma ser tornar a sequência previsível.</p>
+
+        <h2 id="passo-a-passo">Quatro passos para uma manhã mais tranquila</h2>
+
+        <div class="step-num">
+          <div class="n">1</div>
+          <div class="content">
+            <h3>Use apoios visuais em vez de instruções faladas</h3>
+            <p>Um quadro com as etapas em imagens (acordar, vestir, café, escovar dentes, mochila) reduz a necessidade de repetir instruções e dá à criança autonomia para verificar sozinha o que vem a seguir. Cartões que podem ser virados ou marcados como "feito" costumam funcionar melhor do que apenas uma lista na parede.</p>
+          </div>
+        </div>
+
+        <div class="step-num">
+          <div class="n">2</div>
+          <div class="content">
+            <h3>Anuncie as transições com antecedência</h3>
+            <p>Avisos como "faltam dois passos para sair" ajudam a criança a se preparar mentalmente para a próxima mudança. Um timer visual (ampulheta, relógio colorido) pode substituir a contagem verbal, que costuma ser mais estressante.</p>
+          </div>
+        </div>
+
+        <div class="step-num">
+          <div class="n">3</div>
+          <div class="content">
+            <h3>Reduza o número de decisões pela manhã</h3>
+            <p>Escolher a roupa na noite anterior, deixar a mochila pronta e definir o café da manhã com antecedência tira decisões do período mais sensível do dia. Menos decisões de última hora costumam significar menos resistência.</p>
+          </div>
+        </div>
+
+        <div class="step-num">
+          <div class="n">4</div>
+          <div class="content">
+            <h3>Mantenha a sequência estável — mesmo em dias corridos</h3>
+            <p>A ordem das etapas importa mais do que o horário exato. Se um dia começar mais tarde, manter a mesma sequência (em vez de pular passos) preserva a sensação de previsibilidade que sustenta a rotina.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8a3 3 0 013-3h8a3 3 0 013 3v11a2 2 0 01-2 2H7a2 2 0 01-2-2V8z"/></svg></div>
+          <div class="txt"><strong>Quadro de rotina visual pronto para imprimir</strong><span>Baixe o PDF gratuito com os cartões da manhã, tarde e noite, mais uma versão em branco para personalizar.</span></div>
+          <a href="quadro-de-rotina.pdf" class="btn" target="_blank" rel="noopener">Baixar PDF grátis</a>
+        </div>
+
+        <h2 id="ajustes">Quando algo não está funcionando</h2>
+        <p>Se a resistência persiste mesmo com apoios visuais, vale observar se alguma etapa está gerando desconforto sensorial específico — a textura de uma roupa, o barulho da escova de dente, a luz do banheiro. Ajustar esse ponto costuma resolver mais do que insistir na repetição da rotina.</p>
+
+        <blockquote>"Quando paramos de tentar apressar e passamos a mostrar o que vinha a seguir, a manhã deixou de ser uma batalha." — relato de uma mãe na comunidade Passo a Passo</blockquote>
+
+        <div class="quick-tips">
+          <p class="head">Resumo rápido</p>
+          <ul>
+            <li>Troque instruções faladas por apoios visuais sempre que possível.</li>
+            <li>Anuncie transições com antecedência, de forma visual.</li>
+            <li>Tire decisões da manhã: prepare tudo na noite anterior.</li>
+            <li>Priorize a sequência estável em vez do horário exato.</li>
+          </ul>
+        </div>
+
+        <div class="disclaimer-box">Este conteúdo é informativo e reúne estratégias amplamente recomendadas por profissionais da área. Ele não substitui a avaliação ou o acompanhamento de terapeutas e educadores que conhecem a sua criança.</div>
+
+        <div class="author-box">
+          <span class="avatar">PP</span>
+          <div>
+            <h4>Equipe Passo a Passo</h4>
+            <p>Conteúdo revisado com apoio de profissionais especializados em educação e desenvolvimento infantil, escrito por famílias que também vivem essa jornada.</p>
+          </div>
+        </div>
+      </article>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <h4>Neste artigo</h4>
+          <nav class="toc">
+            <a href="#por-que">Por que a manhã pesa tanto</a>
+            <a href="#passo-a-passo">Quatro passos práticos</a>
+            <a href="#ajustes">Quando ajustar a estratégia</a>
+          </nav>
+        </div>
+
+        <div class="side-pdf">
+          <h4>Quadro de rotina visual</h4>
+          <p>PDF gratuito com 18 cartões prontos para imprimir.</p>
+          <a href="quadro-de-rotina.pdf" class="btn" target="_blank" rel="noopener">Baixar agora</a>
+        </div>
+
+        <div class="side-card side-related">
+          <h4>Leia também</h4>
+          <a href="#">Crise sensorial não é birra: como identificar e acolher</a>
+          <a href="#">O que é um PDI e como solicitar na escola</a>
+          <a href="#">5 brincadeiras sensoriais para tardes chuvosas</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <section class="related-section">
+    <div class="related-inner wrap" style="padding-left:0; padding-right:0;">
+      <div class="section-head">
+        <span class="tag" style="background:var(--sage); margin-bottom:14px;">Continue lendo</span>
+        <h2>Outros artigos sobre Dia a Dia e Rotina</h2>
+        <p>Mais estratégias práticas para as horas mais desafiadoras do dia.</p>
+      </div>
+      <div class="art-grid">
+        <a href="#" class="art-card">
+          <span class="tag">Dia a Dia</span>
+          <h3>Crise sensorial não é birra: como identificar e acolher</h3>
+          <div class="art-meta2">7 min de leitura</div>
+        </a>
+        <a href="#" class="art-card">
+          <span class="tag">Dia a Dia</span>
+          <h3>Como adaptar o quarto para reduzir a sobrecarga sensorial</h3>
+          <div class="art-meta2">6 min de leitura</div>
+        </a>
+        <a href="#" class="art-card">
+          <span class="tag">Terapias</span>
+          <h3>5 brincadeiras sensoriais para tardes chuvosas</h3>
+          <div class="art-meta2">4 min de leitura</div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">Passo a Passo</div>
+        <p class="foot-tag">Um espaço acolhedor para famílias de crianças neurodivergentes encontrarem informação, apoio e comunidade.</p>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <a href="passo-a-passo.html#categorias">Dia a Dia e Rotina</a>
+        <a href="passo-a-passo.html#categorias">Educação e Escola</a>
+        <a href="passo-a-passo.html#categorias">Autocuidado dos Pais</a>
+        <a href="passo-a-passo.html#categorias">Terapias e Dicas</a>
+      </div>
+      <div>
+        <h4>Blog</h4>
+        <a href="passo-a-passo.html#artigos">Todos os artigos</a>
+        <a href="passo-a-passo.html#download">Materiais para baixar</a>
+        <a href="passo-a-passo.html#relatos">Relatos da comunidade</a>
+      </div>
+      <div>
+        <h4>Comunidade</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Grupo no WhatsApp</a>
+        <a href="#">Fale conosco</a>
+      </div>
+    </div>
+    <p class="foot-disclaimer">Este blog tem caráter informativo e educacional. O conteúdo não substitui avaliação, diagnóstico ou acompanhamento de profissionais de saúde especializados — sempre consulte a equipe que acompanha sua família. © 2026 Passo a Passo.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', false);
+  }));
+</script>
+
+</body>
+</html>
